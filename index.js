@@ -53,7 +53,6 @@ function createCharacters() {
     characters = [...characters, ...numbers];
   }
   if (toggleSybols) {
-    // characters.push(...symbols);
     characters = [...characters, ...symbols];
   }
   return characters;
