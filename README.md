@@ -137,7 +137,7 @@ P.S. If you're curious about how I code my toggle function, please check line 26
 
 To copy text to clipboard, I use `navigator.clipboard.writeText(text)` which I found the solution [here](https://stackoverflow.com/questions/45071353/copy-text-string-on-click).
 
-Here I use `setTimeout(function, delay)`, a sibling method of `setInterval()` that I learned from my [previous prject](https://github.com/GretaLi/Scoreboard-web-app), to notify the user that the password is copied.
+Here I use `setTimeout(function, delay)`, a sibling method of `setInterval()` that I learned from my [previous project](https://github.com/GretaLi/Scoreboard-web-app), to notify the user that the password is copied.
 
 ```js
 const noteEl = document.querySelector("#note-el");
@@ -164,7 +164,7 @@ function copy(that) {
 I remember at the beginning of my coding journey, I refused to COPY code from the internet.
 I felt so guilty as copy-and-paste was like cheating behavior for me.
 
-Day by day, I realized that there is no ending line for this learning process, to make my learning more efficient, I startrd to get some inspiration from Codepen and Stack overflow to see how people solve their problems. As Per said, it's super normal, even a real developer googles code answers in daily life.
+Day by day, I realized that there is no ending line for this learning process, to make my learning more efficient, I started to get some inspiration from [Codepen](https://codepen.io/) and [Stack Overflow](https://stackoverflow.com/) to see how people solve their problems. As Per said, it's super normal, even a real developer googles code answers in daily life.
 
 So, never be shamed to copy code from the internet (this is for telling myself), as long as I'm following the below principles: from COPY to LEARN
 
