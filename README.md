@@ -176,7 +176,7 @@ So, never be shamed to copy code from the internet (this is for telling myself),
 
 Thanks for reading my document! ✨
 
-Happy coding, happy life, Chears! 💫
+Happy coding, happy life, Cheers! 💫
 
 ---
 
