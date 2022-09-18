@@ -61,10 +61,11 @@ function createCharacters() {
 // Click to copy | onclick event
 const noteEl = document.querySelector("#note-el");
 function copy(that) {
-  navigator.clipboard.writeText(that.textContent);
+  navigator.clipboard.writeText(that.textContent).then(function () {
+    noteEl.textContent = "Password copied to clipboard";
+    noteEl.classList.add("active");
+  });
 
-  noteEl.textContent = "Password copied to clipboard";
-  noteEl.classList.add("active");
   setTimeout(function () {
     noteEl.textContent = "Click to copy your password";
     noteEl.classList.remove("active");
