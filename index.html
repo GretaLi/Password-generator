@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="This is a free secure password generator to use on any computer, phone, or tablet."
+    />
+    <meta name="keywords" content="Password, Password generator" />
+    <meta name="author" content="Greta Li" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator Web App</title>
+    <script
+      src="https://kit.fontawesome.com/4925ccd0b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Generate a <span>random password</span></h1>
+        <p>Never use an insecure password again</p>
+      </header>
+      <main>
+        <button class="btn btn-primary" onclick="generateTwoPasswords()">
+          Generate Passwords
+        </button>
+        <div class="setting-wrap">
+          <div class="setting-item">
+            <label for="input-length">Length: </label
+            ><input
+              id="input-length"
+              type="number"
+              value="15"
+              min="4"
+              max="20"
+              maxlength="2"
+            />
+          </div>
+          <div class="setting-item">
+            <label>Numbers:</label>
+            <div class="toggle-btn">
+              <input
+                type="checkbox"
+                class="checkbox"
+                onclick="toggle('number')"
+              />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+          <div class="setting-item">
+            <label>Symbols:</label>
+            <div class="toggle-btn">
+              <input
+                type="checkbox"
+                class="checkbox"
+                onclick="toggle('symbol')"
+              />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
+        <div class="password-wrap">
+          <button
+            id="password-one-el"
+            class="btn btn-secondary"
+            onclick="copy(this)"
+          >
+            Password 1
+          </button>
+          <button
+            id="password-two-el"
+            class="btn btn-secondary"
+            onclick="copy(this)"
+          >
+            Password 2
+          </button>
+        </div>
+        <p class="note" id="note-el">Click to copy your password</p>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+:root {
+  /* Modern theme color */
+  /* --clr-primary: 160, 84%, 39%;
+  --clr-secondary: 215, 30%, 22%;
+  --clr-bg: 152, 81%, 96%;
+  --clr-dark: 250, 18%, 19%;
+  --clr-light: 210, 9%, 46%;
+  --clr-white: 0, 0%, 100%; */
+
+  /* Vintage theme color */
+  --clr-primary: 343, 48%, 57%;
+  --clr-secondary: 343, 10%, 29%;
+  --clr-bg: 30, 63%, 91%;
+  --clr-dark: 343, 39%, 22%;
+  --clr-light: 343, 10%, 29%;
+  --clr-white: 0, 0%, 100%;
+
+  --ff-title: "Karla", sans-serif;
+  --ff-text: "Inter", sans-serif;
+
+  --border-radius: 5px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: hsl(var(--clr-light), 0.2);
+  background: hsl(var(--clr-dark));
+  font-family: var(--ff-text);
+
+  /* no select */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container {
+  width: 100vw;
+  padding: 2.25rem 2rem;
+  background: hsl(var(--clr-bg));
+}
+
+/* ----- HEADER ----- */
+
+header h1 {
+  margin-bottom: 0.75rem;
+  color: hsl(var(--clr-dark));
+  font-family: var(--ff-title);
+  font-weight: 800;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px hsl(var(--clr-white));
+  text-transform: uppercase;
+}
+
+header span {
+  display: block;
+  color: hsl(var(--clr-primary));
+}
+
+header p {
+  margin-bottom: 3.25rem;
+  color: hsl(var(--clr-light));
+  font-size: 20px;
+}
+
+/* ----- MAIN ----- */
+
+/* util */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: hsl(var(--clr-primary));
+  color: hsl(var(--clr-white));
+}
+
+.btn-secondary {
+  background: hsl(var(--clr-secondary));
+  color: hsl(var(--clr-primary));
+  color: hsl(var(--clr-bg));
+}
+
+/* passord output */
+.password-wrap {
+  padding-top: 2.25rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid hsl(var(--clr-light), 0.5);
+}
+
+.password-wrap .btn {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.password-wrap .btn:focus {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.note {
+  text-align: center;
+  color: hsl(var(--clr-light));
+  transition: color 0.3s ease;
+}
+
+.note.active {
+  color: hsl(var(--clr-dark));
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* settings */
+.setting-wrap {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 2.25rem 0;
+  padding: 1.5rem 2rem;
+  background: hsl(var(--clr-light), 0.1);
+  border-radius: var(--border-radius);
+}
+
+.setting-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(var(--clr-light));
+  font-weight: bold;
+}
+
+.setting-item input[type="number"] {
+  height: 2.25rem;
+  width: 4.625rem;
+  padding-left: 10px;
+  background-color: hsl(var(--clr-light), 0.5);
+  border-radius: 100px;
+  border: none;
+  color: hsl(var(--clr-secondary));
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.setting-item input[type="number"]:focus {
+  outline: none;
+}
+
+/* togole buttons */
+/* Original from: https://codepen.io/himalayasingh/pen/EdVzNL */
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.toggle-btn {
+  position: relative;
+  top: 50%;
+  width: 4.625rem;
+  height: 2.25rem;
+  margin-left: 2rem;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: hsl(var(--clr-light), 0.5);
+  transition: 0.3s ease all;
+  z-index: 1;
+  border-radius: 100px;
+}
+
+.toggle-btn .knobs:before {
+  content: "ON";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  padding: 9px 4px;
+  line-height: 1;
+  background-color: hsl(var(--clr-secondary));
+  border-radius: 50%;
+  color: hsl(var(--clr-white));
+  text-align: center;
+  font-size: 8px;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+.toggle-btn .checkbox:active + .knobs:before {
+  width: 46px;
+  border-radius: 100px;
+}
+
+.toggle-btn .checkbox:checked:active + .knobs:before {
+  margin-left: -26px;
+}
+
+.toggle-btn .checkbox:checked + .knobs:before {
+  content: "OFF";
+  left: 42px;
+  background-color: hsl(var(--clr-secondary), 0.5);
+}
+
+@media (min-width: 600px) {
+  body {
+    min-height: 90vh;
+    align-items: center;
+    padding: 2rem;
+  }
+  .container {
+    width: 550px;
+    margin: auto;
+    padding: 3.25rem;
+    border-radius: var(--border-radius);
+  }
+
+  .password-wrap {
+    flex-wrap: nowrap;
+  }
+}
