@@ -25,7 +25,7 @@ function generateTwoPasswords() {
 
 // Toggle settings | onclick event
 let toggleNumbers = true;
-let toggleSybols = true;
+let togglesymbols = true;
 
 function toggle(settingTarget) {
   if (settingTarget === "number" && toggleNumbers) {
@@ -33,10 +33,10 @@ function toggle(settingTarget) {
   } else if (settingTarget === "number" && !toggleNumbers) {
     return (toggleNumbers = true);
   }
-  if (settingTarget === "symbol" && toggleSybols) {
-    return (toggleSybols = false);
-  } else if (settingTarget === "symbol" && !toggleSybols) {
-    return (toggleSybols = true);
+  if (settingTarget === "symbol" && togglesymbols) {
+    return (togglesymbols = false);
+  } else if (settingTarget === "symbol" && !togglesymbols) {
+    return (togglesymbols = true);
   }
 }
 
@@ -52,7 +52,7 @@ function createCharacters() {
   if (toggleNumbers) {
     characters = [...characters, ...numbers];
   }
-  if (toggleSybols) {
+  if (togglesymbols) {
     characters = [...characters, ...symbols];
   }
   return characters;
