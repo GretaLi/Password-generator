@@ -135,18 +135,20 @@ P.S. If you're curious about how I code my toggle function, please check line 26
 
 **{ Click to Copy Function }**
 
-To copy text to clipboard, I use `navigator.clipboard.writeText(text)` which I found the solution [here](https://stackoverflow.com/questions/45071353/copy-text-string-on-click).
+To copy text to clipboard, I use `navigator.clipboard.writeText(text).then(function())` which I found the solution [here](https://stackoverflow.com/questions/45071353/copy-text-string-on-click).
 
-Here I use `setTimeout(function, delay)`, a sibling method of `setInterval()` that I learned from my [previous project](https://github.com/GretaLi/Scoreboard-web-app), to notify the user that the password is copied.
+Here I use `setTimeout(function, delay)`, a sibling method of `setInterval()` that I learned from my [previous project](https://github.com/GretaLi/Scoreboard-web-app), to assign the previous text after 2.5s from the click.
 
 ```js
 const noteEl = document.querySelector("#note-el");
 function copy(that) {
-  navigator.clipboard.writeText(that.textContent);
+  navigator.clipboard.writeText(that.textContent).then(function () {
+    // notify the user when clipboard successfully set
+    noteEl.textContent = "Password copied to clipboard";
+    noteEl.classList.add("active");
+  });
 
-  noteEl.textContent = "Password copied to clipboard";
-  noteEl.classList.add("active");
-
+  // after 2.5s from the click, assign the defualt text
   setTimeout(function () {
     noteEl.textContent = "Click to copy your password";
     noteEl.classList.remove("active");
