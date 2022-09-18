@@ -22,9 +22,9 @@ Repo: https://github.com/GretaLi/Password-generator
 
 - Generate two random passwords when the user clicks button
 - Each password should be 15 characters long
-- Ability to set password length passwordLength (additional)
+- Ability to set password length (additional)
 - Add copy-on-click (additional)
-- Toggle "simbols" and "numbers" on/off (additional)
+- Toggle "siymbols" and "numbers" on/off (additional)
 
 ### Built with
 
